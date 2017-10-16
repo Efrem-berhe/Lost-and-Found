@@ -1,0 +1,67 @@
+
+li{
+    padding-left: 8px;
+    list-style-type: none;
+}
+.bak-gd-color{
+    background-color: #34495e;
+    height: 56px;
+}
+.navbar-brand-setting{
+    font-family: cursive;
+    font-weight: 800;
+}
+.navbar-brand{
+    color: #FFFFFF !important;
+}
+.my-flex-card{
+    height: calc(100% - 15px);
+    margin-bottom: 15px;
+}
+a { 
+    color: white;
+    text-decoration:none;
+    padding-right: 4px;
+}
+a:hover{
+    color: orange;
+     text-decoration:none;
+}
+.Asside-settings{
+   float: left;
+   
+}
+select{
+    background: #eceeef;
+}
+aside{
+    background: #95a5a6;
+    position: fixed;
+    height: 100%;
+    width: 220px;
+    z-index: 999;
+}
+.red-color{
+    color: #e74c3c;
+}
+.green-color{
+    color: green;
+}
+form { 
+argin: 0 auto;
+}
+.top_parent{
+    padding-right: 16px;
+}
+.Padding-Top{
+    padding-top: 32px;
+}
+
+.Black-Color{
+    color: black;
+}
+.Orange-bg-color{
+    background-color: orange;
+}
+
+
