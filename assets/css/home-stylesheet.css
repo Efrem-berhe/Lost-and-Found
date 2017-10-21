@@ -9,10 +9,13 @@ li{
 }
 .navbar-brand-setting{
     font-family: cursive;
+   
     font-weight: 800;
 }
 .navbar-brand{
     color: #FFFFFF !important;
+    padding-top: 1px;
+    padding-bottom: 6px;
 }
 .my-flex-card{
     height: calc(100% - 15px);

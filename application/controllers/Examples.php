@@ -182,11 +182,12 @@ class Examples extends MY_Controller
             $username = $this->input->post('username');
             $email = $this->input->post('email');
             $password = $this->input->post('password');
-        
+            $img = 'assets/uploads/profileImg.png';
 		// Customize this array for your user
 		$user_data = [
 			'username'   => $username,
 			'passwd'     => $password,
+                        'profileImg' => $img,
 			'email'      => $email,
 			'auth_level' => '9', // 9 if you want to login @ examples/index.
 		];

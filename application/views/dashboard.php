@@ -26,7 +26,7 @@
             <div class="row">
 
                 <?php foreach ($items as $item): ?> 
-                    <div class="col-sm-4 my-flex-card">
+                    <div class="col-sm-6 col-md-4 my-flex-card">
                         <div class="card  mb-3">
                             <img class="card-img-top" src="<?= base_url() ?>assets/uploads/<?php echo $item->img; ?>" height="236" alt="Card image cap">
                             <div class="card-block">

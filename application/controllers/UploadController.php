@@ -52,7 +52,7 @@ class UploadController extends MY_Controller {
         public function itemlost(){
             
             if($this->require_role('admin') ){
-               
+                
                 $this->is_logged_in();
                 
 		$this->load->view('site_header');
