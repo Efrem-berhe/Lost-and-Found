@@ -28,7 +28,7 @@
                             <div class="pb-3">
                                 <h1>Profile settings</h1>
                             </div>
-                            <p>Your current user name is : <?php echo $username ?> </p>
+                            <p>Your current user name is : <?php echo $this->auth_username ?> </p>
                             <div class="form-group row">
                                 
                                 <div class="col-sm-12">
@@ -49,6 +49,7 @@
                                     <input  type="password" name="password" id="password" class="form-control" placeholder="New Password" >
                                 </div>
                             </div>
+
                             <div class="form-group row">
                               
                                 <div class="col-sm-12">

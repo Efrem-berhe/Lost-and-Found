@@ -25,6 +25,7 @@ class Examples extends MY_Controller
 		// Form and URL helpers always loaded (just for convenience)
 		$this->load->helper('url');
 		$this->load->helper('form');
+                $this->load->library('upload'); 
                 $this->load->model('item_model');               
                 $this->load->model('itemFound_model');
                 $this->load->model('user_model');
@@ -75,6 +76,59 @@ class Examples extends MY_Controller
 	 * that somebody is logged in. Also showing how to 
 	 * get the contents of the HTTP user cookie.
 	 */
+    
+        public function profile_upload(){
+       
+           $this->is_logged_in();
+            
+            echo $this->load->view('site_header', '', TRUE);
+            echo $this->load->view('site_navbar', '', TRUE);
+            echo $this->load->view('profile_upload','', TRUE); 
+            echo $this->load->view('site_footer', '', TRUE);
+        }
+        
+        public function update_profileImg(){
+            
+            
+            $this->is_logged_in();
+             $fileData = array();
+        // File upload script
+        $this->upload->initialize(array(
+            'upload_path' => 'assets/uploads/',
+            'overwrite' => false,
+            'max_filename' => 300,
+            'encrypt_name' => true,
+            'remove_spaces' => true,
+            'allowed_types' => 'gif|jpg|png',
+            'max_size' => 200,
+            'xss_clean' => true,
+        ));
+            
+            
+            
+            if ($this->upload->do_upload('profileImg'))
+                {
+                        $data =  $this->upload->data();
+                        $fileData[] = $data;
+                        foreach ($fileData as $file) {
+                        $file_data = $file;
+                        }
+                    
+                    $item_data = $file_data['file_name'];                   
+  
+             
+                    
+                    $this->user_model->update_profileImg($item_data);
+                    redirect('Examples/index');
+                  
+                }else{
+                    $error = array('error' => $this->upload->display_errors());
+                    var_dump($error);
+                }
+                
+           
+        }
+
         public function profile(){
             $this->is_logged_in();
             
@@ -83,23 +137,20 @@ class Examples extends MY_Controller
             echo $this->load->view('user_profile','', TRUE); 
             echo $this->load->view('site_footer', '', TRUE);
         }
+        
         public function update_user(){
             $this->is_logged_in();
                    
-                    $user_data =  array(
+                   
                     // So you can work with the values, like:
-                    'category' => $this->input->post('category', true), // TRUE is XSS protection
-                    'status' => 'Found',
-                    'description' => $this->input->post('description',true),
-                    'date'     => $this->input->post('date',true),
-                    'img' => $file_data['file_name'],
-                    'location'  => $this->input->post('location',true),
-                    'item_name' => $this->input->post('item_name',true),
-                    'userID'=>$this->auth_user_id,
-  
-                );
+                    $username = $this->input->post('username', true); // TRUE is XSS protection                    
+                    $email = $this->input->post('email',true);
+                    $password  = $this->input->post('password',true);
+                    $passwd = $this->authentication->hash_passwd($password);
                     
-            redirect('Examples/index');
+                    $this->user_model->update_user($username,$email,$passwd);
+                    
+                    redirect('Examples/index');
         }
 
         public function deleteItem($item_id){

@@ -15,7 +15,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 <script>window.jQuery || document.write('<script src="<?=base_url()?>assets/js/jquery.min.js"><\/script>')</script>
-
+<script src="<?=base_url()?>assets/js/profile_upload.js" type="text/javascript"></script>
 <script src="<?=base_url()?>assets/js/tether.js"></script>
 <script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 

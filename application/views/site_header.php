@@ -14,6 +14,7 @@
     
     <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/css/home-stylesheet.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/css/profile_upload.css" rel="stylesheet" type="text/css"/>
     <link href="<?=base_url()?>assets/css/navbar.css" rel="stylesheet" type="text/css"/>
     <link href="<?=base_url()?>assets/fonts/css/font-awesome.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/css/footer-stylesheet.css" rel="stylesheet">

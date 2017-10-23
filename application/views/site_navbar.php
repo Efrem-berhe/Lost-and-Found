@@ -75,9 +75,8 @@
                 echo base_url();
                 echo'assets/uploads/';
                 echo  $profileImg;       
-                echo '">';
-                echo $username;
-               
+                echo '">';  
+                echo $this->auth_username;
                 echo '<span></span>';
 
                 echo '</a>';
@@ -96,7 +95,7 @@
                 echo ' </div>';
                 echo ' <div class="col-lg-8">';
                 echo'    <p class="text-left">';
-                echo $username;
+                echo  $this->auth_username;
                 echo '</p>';
                 echo '<p class="text-left small">';
                 echo  $this->auth_email;
@@ -104,10 +103,10 @@
                 echo' <p class="text-left">';
                 
                 echo '<a class="btn btn-primary btn-block btn-sm" href = "';
-                echo site_url('examples/profile');
+                echo site_url('examples/profile_upload');
                 echo '">Change Picture</a>';
                 
-                //echo anchor( site_url('examples/profile', NULL),' <p class="btn btn-primary btn-block btn-sm">Change Picture</p>');
+                //echo anchor( site_url('examples/profile_upload', NULL),' <p class="btn btn-primary btn-block btn-sm">Change Picture</p>');
                 //echo ' <a href="" class="btn btn-primary btn-block btn-sm">Profile settings</a>';
                 echo'  </p>';
                 echo'  </div>';

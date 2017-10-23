@@ -15,31 +15,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class user_model extends CI_Model {
     
-     
-    public function update_user( $password,$user_id)
-	{
-		// User ID check
-		if( isset( $user_id ) && $user_id !== FALSE )
-		{
-			$query = $this->db->select( 'user_id' )
-				->from( $this->db_table('user_table') )
-				->where( 'user_id', $user_id )	
+    public function update_profileImg($item_data){
+
+
+			$query = $this->db->select( $this->auth_user_id )
+				->from('users')
+				->where( 'user_id', $this->auth_user_id )	
 				->get();
 
-			// If above query indicates a match, change the password
+			// If above query indicates a match, change the profile image
 			if( $query->num_rows() == 1 )
 			{
 				$user_data = $query->row();
-
-				$this->db->where( 'user_id', $user_data->user_id )
-					->update( 
-						$this->db_table('user_table'), 
-						[
-							'passwd' => $this->authentication->hash_passwd( $password ),
-						] 
+                                
+                                $this->db->set('profileImg', $item_data);
+				$this->db->where( 'user_id', $this->auth_user_id )
+					->update( 'users'
+						
 					);
 			}
-		}
+		
+	
+    }
+
+    public function update_user( $username,$email,$passwd)
+	{
+		$query = $this->db->select( $this->auth_user_id )
+				->from('users')
+				->where( 'user_id', $this->auth_user_id )	
+				->get();
+
+			// If above query indicates a match, change the profile image
+			if( $query->num_rows() == 1 )
+			{
+				$user_data = $query->row();                    
+                                //$this->load->model('examples/examples_model');
+                                $this->db->set('username', $username);
+                                $this->db->set('email', $email);
+                                $this->db->set('passwd', $passwd);
+                                
+				$this->db->where( 'user_id', $this->auth_user_id )
+					->update( 'users'
+						
+					);
+			}
 	}
 }
 
