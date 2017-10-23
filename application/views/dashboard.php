@@ -19,7 +19,7 @@
         </aside>
 
     </div>
-
+  
     <div class="col-sm-10">
         <div class="jumbotron Padding-Top">
   

@@ -1,7 +1,17 @@
 <body >
-
+<!--            <?php 
+            if(empty($items)){
+                
+            }else{
+                
+               foreach ($items as $item){  
+               echo $item->profileImg; }  
+            }
+ 
+           ?>   -->
+      
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bak-gd-color">
-
+        
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +60,9 @@
             </ul>  
 
             <?php
+     
             if (isset($auth_user_id)) {
+                
                 echo'  <div class="mt-2">';
                 echo anchor(site_url('examples/home', NULL), '<i class="fa fa-home" aria-hidden="true" style="padding-right: 4px;"></i> Home');
                 echo anchor(site_url('examples/myItems', NULL), '<i class="fa fa-handshake-o" aria-hidden="true" style="padding-left: 16px;padding-right:4px;"></i> My Items');
@@ -61,11 +73,11 @@
                 echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">';
                 echo '<img height="38px" width="38px"class="ppborder mr-1"src="';
                 echo base_url();
-                echo 'assets/uploads/';
-                //echo  $this->auth_profileImg;
-                echo 'userprofile.png';
+                echo'assets/uploads/';
+                echo  $profileImg;       
                 echo '">';
                 echo $username;
+               
                 echo '<span></span>';
 
                 echo '</a>';
@@ -75,7 +87,11 @@
                 echo '      <div class="row">';
                 echo '         <div class="col-lg-4">';
                 echo '          <p class="text-center">';
-                echo '          <span class="glyphicon glyphicon-user icon-size"></span>';
+                echo '<img height="90px" width="90px"class="ppborder mr-1"src="';
+                echo base_url();
+                echo'assets/uploads/';
+                echo  $profileImg;       
+                echo '">';
                 echo '     </p>';
                 echo ' </div>';
                 echo ' <div class="col-lg-8">';
@@ -86,7 +102,13 @@
                 echo  $this->auth_email;
                 echo '</p>';
                 echo' <p class="text-left">';
-                echo ' <a href="#" class="btn btn-primary btn-block btn-sm">Profile settings</a>';
+                
+                echo '<a class="btn btn-primary btn-block btn-sm" href = "';
+                echo site_url('examples/profile');
+                echo '">Change Picture</a>';
+                
+                //echo anchor( site_url('examples/profile', NULL),' <p class="btn btn-primary btn-block btn-sm">Change Picture</p>');
+                //echo ' <a href="" class="btn btn-primary btn-block btn-sm">Profile settings</a>';
                 echo'  </p>';
                 echo'  </div>';
                 echo'</div>';
@@ -98,30 +120,50 @@
                 echo' <div class="navbar-login navbar-login-session">';
                 echo'   <div class="row">';
                 echo'   <div class="col-lg-12">';
-
-                echo'   <a href="#" class="dropdown-item">Lost and Found</a>';
-
+ 
+                echo '<a class="dropdown-item" href = "';
+                echo site_url('examples/profile');
+                echo '">Profile Settings</a>';
+                
                 echo' </div>';
                 echo' </div>';
-                echo'  </div>';
+                echo' </div>';
                 echo' </li>';
-
+                
                 echo '<div class="dropdown-divider"></div>';
                 echo' <li>';
                 echo' <div class="navbar-login navbar-login-session">';
                 echo'   <div class="row">';
                 echo'   <div class="col-lg-12">';
 
-                echo' <a href="examples/logout" class="btn btn-danger btn-block">Logout</a>';
+                echo '<a class="dropdown-item" href = "';
+                echo site_url('examples/profile');
+                echo '">Lost and Found </a>';
 
                 echo' </div>';
                 echo' </div>';
                 echo'  </div>';
                 echo' </li>';
 
+                echo' <div class="dropdown-divider"></div>';
+                echo' <li>';
+                echo' <div class="navbar-login navbar-login-session">';
+                echo' <div class="row">';
+                echo' <div class="col-lg-12">';
+                
+                echo '<a class="dropdown-item" href = "';
+                echo site_url('examples/logout');
+                echo '">Log Out</a>';
+
+                echo' </div>';
+                echo' </div>';
+                echo' </div>';
+                echo' </li>';
+
                 echo' </ul>';
-                echo'</li>';
-                echo'  </ul> ';
+                echo' </li>';
+                echo' </ul> ';
+            
             } else {
                 echo'  <div class="mt-2">';
                 echo anchor(site_url(LOGIN_PAGE . '?' . AUTH_REDIRECT_PARAM . '=examples', NULL), '<i class="fa fa-sign-in" aria-hidden="true" style="padding-right: 4px;"></i> Sing In', 'id="login-link"');

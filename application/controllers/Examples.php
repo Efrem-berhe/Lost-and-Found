@@ -25,8 +25,9 @@ class Examples extends MY_Controller
 		// Form and URL helpers always loaded (just for convenience)
 		$this->load->helper('url');
 		$this->load->helper('form');
-                $this->load->model('item_model');
+                $this->load->model('item_model');               
                 $this->load->model('itemFound_model');
+                $this->load->model('user_model');
                 $this->load->model('itemLost_model');
                 
 	}
@@ -49,20 +50,19 @@ class Examples extends MY_Controller
 	 * If the user is logged in, a link to "Logout" will be in the menu.
 	 * If they are not logged in, a link to "Login" will be in the menu.
 	 */
+       
+        
 	public function index()
 	{   
-            
-            
+ 
             $this->is_logged_in();
             $Data = $this->item_model->get();
-            
-            echo $this->load->view('site_header', '', TRUE);
-            echo $this->load->view('site_navbar', '', TRUE);
+
+            echo $this->load->view('site_header', '', TRUE);            
+            echo $this->load->view('site_navbar','', TRUE);
             echo $this->load->view('dashboard', ['items'=>$Data] , TRUE); 
             echo $this->load->view('site_footer', '', TRUE);
-
-
-		
+	
 	}
 
 
@@ -75,7 +75,33 @@ class Examples extends MY_Controller
 	 * that somebody is logged in. Also showing how to 
 	 * get the contents of the HTTP user cookie.
 	 */
-        
+        public function profile(){
+            $this->is_logged_in();
+            
+            echo $this->load->view('site_header', '', TRUE);
+            echo $this->load->view('site_navbar', '', TRUE);
+            echo $this->load->view('user_profile','', TRUE); 
+            echo $this->load->view('site_footer', '', TRUE);
+        }
+        public function update_user(){
+            $this->is_logged_in();
+                   
+                    $user_data =  array(
+                    // So you can work with the values, like:
+                    'category' => $this->input->post('category', true), // TRUE is XSS protection
+                    'status' => 'Found',
+                    'description' => $this->input->post('description',true),
+                    'date'     => $this->input->post('date',true),
+                    'img' => $file_data['file_name'],
+                    'location'  => $this->input->post('location',true),
+                    'item_name' => $this->input->post('item_name',true),
+                    'userID'=>$this->auth_user_id,
+  
+                );
+                    
+            redirect('Examples/index');
+        }
+
         public function deleteItem($item_id){
             $this->is_logged_in();
             $Delet = $this->item_model->deleteItem($item_id);
@@ -182,7 +208,7 @@ class Examples extends MY_Controller
             $username = $this->input->post('username');
             $email = $this->input->post('email');
             $password = $this->input->post('password');
-            $img = 'assets/uploads/profileImg.png';
+            $img = 'profileImg.png';
 		// Customize this array for your user
 		$user_data = [
 			'username'   => $username,
@@ -259,7 +285,7 @@ class Examples extends MY_Controller
 
 //			$this->db->set($user_data)
 //				->insert(db_table('user_table'));
-                        
+                        //$this->db->insert('customers_profile', $img);
                         $this->db->insert('users', $user_data);
                         
 			if( $this->db->affected_rows() == 1 ){

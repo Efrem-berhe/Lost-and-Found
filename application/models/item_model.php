@@ -20,8 +20,9 @@ class item_model extends CI_Model {
 		 $this->db->insert('item', $item_data);
                 return $this->db->insert_id();
 	}
-        
-    public function get(){
+
+
+        public function get(){
         $this->db->select('*');
         $this->db->from('item');
         $q = $this->db->get();
@@ -50,12 +51,19 @@ class item_model extends CI_Model {
                 return $query->result();  
     }
     
+    public function profileImg(){     
+        $this->db->select("*")
+                ->from("users")
+                ->where("user_id",$this->auth_user_id);
+                $query = $this->db->get(); 
+                return $query->result();           
+    }
     public function userItems(){     
         $this->db->select("*")
                 ->from("item")
                 ->where("userID",$this->auth_user_id);
-                $query = $this->db->get();  
-                return $query->result();
+                $query = $this->db->get(); 
+                return $query->result();           
     }
     
     public function deleteItem($item_id){

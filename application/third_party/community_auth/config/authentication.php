@@ -86,7 +86,7 @@ $config['max_allowed_attempts'] = 5;
 | SET TO ZERO TO DISABLE THIS FUNCTIONALITY
 | 
 */
-
+$config['declared_auth_model'] = 'my_auth_model';
 $config['deny_access_at'] = 10;
 
 /*

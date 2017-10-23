@@ -23,7 +23,25 @@ class MY_Controller extends Auth_Controller
 	public function __construct()
 	{
 		parent::__construct();
+                     
 	}
+     public $profileImg = NULL;
+ 
+    protected function _set_user_variables()
+    {
+      parent::_set_user_variables();
+      
+ // For controllers
+      $this->profileImg = array(
+          'profileImg' => $this->auth_data->profileImg,
+      );
+
+      // For CI config
+      $this->config->set_item( 'profileImg', $this->profileImg);
+
+      // For views
+      $this->load->vars( $this->profileImg);
+    }  
 }
 
 /* End of file MY_Controller.php */

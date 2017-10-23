@@ -22,7 +22,7 @@ class Auth_Controller extends CI_Controller {
 	 * @access public
 	 */
 	public $auth_user_id;
-
+        
 	/**
 	 * The logged-in user's username
 	 *
@@ -420,15 +420,16 @@ class Auth_Controller extends CI_Controller {
 	protected function _set_user_variables()
 	{
 		// Set user specific variables to be available in controllers
-		$this->auth_user_id  = $this->auth_data->user_id;
+		$this->auth_user_id  = $this->auth_data->user_id;               
 		$this->auth_username = $this->auth_data->username;
 		$this->auth_level    = $this->auth_data->auth_level;
 		$this->auth_role     = $this->authentication->roles[$this->auth_data->auth_level];
 		$this->auth_email    = $this->auth_data->email;
+              
 
 		// Set user specific variables to be available in all views
 		$data = [
-			'auth_user_id'  => $this->auth_user_id,
+			'auth_user_id'  => $this->auth_user_id,                        
 			'auth_username' => $this->auth_username,
 			'auth_level'    => $this->auth_level,
 			'auth_role'     => $this->auth_role,
@@ -436,7 +437,7 @@ class Auth_Controller extends CI_Controller {
 		];
 
 		// Set user specific variables to be available as config items
-		$this->config->set_item( 'auth_user_id',  $this->auth_user_id );
+		$this->config->set_item( 'auth_user_id',  $this->auth_user_id );           
 		$this->config->set_item( 'auth_username', $this->auth_username );
 		$this->config->set_item( 'auth_level',    $this->auth_level );
 		$this->config->set_item( 'auth_role',     $this->auth_role );

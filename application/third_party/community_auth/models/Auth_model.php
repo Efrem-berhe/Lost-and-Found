@@ -29,6 +29,7 @@ class Auth_model extends MY_Model {
 		// Selected user table data
 		$selected_columns = [
 			'username',
+                        'profileImg',
 			'email',
 			'auth_level',
 			'passwd',
@@ -134,6 +135,7 @@ class Auth_model extends MY_Model {
 		// Selected user table data
 		$selected_columns = [
 			'u.username',
+                        'u.profileImg',
 			'u.email',
 			'u.auth_level',
 			'u.user_id',
