@@ -24,6 +24,7 @@ class Examples_model extends MY_Model {
 	 */
 	public function update_user_raw_data( $the_user, $user_data = [] )
 	{
+            echo 'i am called';
 		$this->db->where('user_id', $the_user)
 			->update( $this->db_table('user_table'), $user_data );
 	}

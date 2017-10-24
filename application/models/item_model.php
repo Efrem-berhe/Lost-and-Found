@@ -12,9 +12,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
  * @link        http://community-auth.com
  */
-
+$img='';
+         
 class item_model extends CI_Model {
-    
+            
     public function insert( $item_data )
 	{
 		 $this->db->insert('item', $item_data);
@@ -65,8 +66,11 @@ class item_model extends CI_Model {
                 $query = $this->db->get(); 
                 return $query->result();           
     }
-    
+       
     public function deleteItem($item_id){
+        
+                 $this->db->query("INSERT INTO customer_profiles (user_id,img,status,location) SELECT userID,img,status, location FROM item WHERE id = $item_id");
+            
                 $this->db->where("id",$item_id);
                 $del = $this->db->delete('item');
                 return $del;

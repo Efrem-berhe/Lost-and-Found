@@ -87,7 +87,7 @@ $config['max_allowed_attempts'] = 5;
 | 
 */
 $config['declared_auth_model'] = 'my_auth_model';
-$config['deny_access_at'] = 10;
+$config['deny_access_at'] = 1;
 
 /*
 | -----------------------------------------------------------------
@@ -129,7 +129,7 @@ $config['apache_config_file_location'] = FCPATH . '.htaccess';
 |
 */
 
-$config['seconds_on_hold'] = 600;
+$config['seconds_on_hold'] = 10;
 
 /*
 | -----------------------------------------------------------------

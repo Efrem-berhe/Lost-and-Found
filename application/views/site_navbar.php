@@ -136,8 +136,8 @@
                 echo'   <div class="col-lg-12">';
 
                 echo '<a class="dropdown-item" href = "';
-                echo site_url('examples/profile');
-                echo '">Lost and Found </a>';
+                echo site_url('examples/resolved');
+                echo '">Resolved Items </a>';
 
                 echo' </div>';
                 echo' </div>';

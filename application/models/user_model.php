@@ -60,6 +60,26 @@ class user_model extends CI_Model {
 					);
 			}
 	}
+        
+        public function update_username($username){
+            
+             $this->db->set('username', $username);
+             $this->db->where( 'user_id', $this->auth_user_id )
+					->update( 'users');
+        }
+        
+        public function update_password($password){
+            
+            $this->db->set('passwd', $password);
+             $this->db->where( 'user_id', $this->auth_user_id )
+					->update( 'users');
+        }
+        
+        public function update_email($email){
+            $this->db->set('email', $email);
+             $this->db->where( 'user_id', $this->auth_user_id )
+					->update( 'users');
+        }
 }
 
 

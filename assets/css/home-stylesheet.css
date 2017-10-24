@@ -28,7 +28,11 @@ a {
 }
 a:hover{
     color: orange;
-     text-decoration:none;
+    text-decoration:none;
+}
+a:focus{
+    color: orange;
+    text-decoration:none;
 }
 .Asside-settings{
    float: left;
