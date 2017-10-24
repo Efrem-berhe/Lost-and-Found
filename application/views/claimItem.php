@@ -35,7 +35,8 @@
                         </div>    
                     </div>
                 </div>
-            </div>        
+            </div>   
+            
             <?php echo form_open_multipart(); ?>
             <fieldset>
                 <legend class="text-center">Claim Item</legend>

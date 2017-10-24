@@ -1,4 +1,4 @@
-
+public $item_id1;
 <div class="row">
     <div class="col-sm-2 Asside-settings">
 
@@ -22,6 +22,21 @@
 
     </div>
     
+     <div id="dialogoverlay"></div>
+     <div id="dialogbox">
+         <div>
+             <div id="dialogboxhead"></div>
+             <div id="dialogboxbody" style=" background: #333; padding: 20px; color: #fff"></div>
+             <div id="dialogboxfoot" style="background: #666; padding: 10px; text-align: right">
+                 <button onclick="Alert.no()" class="mr-2"> No </button>
+                 <button onclick="Alert.ok()" class="ml-1"> Ok </button>
+                    
+             </div>
+
+         </div>
+     </div>
+    
+    
     <div class="col-sm-10">
         <div class="jumbotron Padding-Top">
             <div class="row">
@@ -33,39 +48,47 @@
                                 <h3 class="card-title"><?php echo $item->status; ?></h3>
                                     <li class="card-text"><?php $item->item_name?></li>
                                     <li class="card-text"><?php $item->description ?></li>
-                                
-                                
+                              
                                 <ul class="list-group list-group-flush">
 
                                  
                                     <?php if($item->status =='Found'){
                                         
+                                       echo '<div id="dom-target">';
+                                             
+                                                $output = $item->id; //Again, do some operation, get the output.
+                                                echo 'Item Id : '. htmlspecialchars($output); /* You have to escape because the result
+                                                //                                   will not be valid HTML otherwise. */
+                                            
+                                       echo ' </div>';
+                                        
+                                        
                                         echo '<li class="list-group-item">Item Found At : ';
                                         echo $item->location;
                                         echo '</li>';
-                                        
-                                        echo '<li class="list-group-item">';
-                                        echo anchor( site_url('examples/deleteItem/'.$item->id, NULL),
-                                        '<i class="btn btn-primary m-auto" '
-                                                . '>'
-                                                .'Delete Item'
-                                                . '</i>');
-                                        
+                                        echo '<li class="list-group-item m-auto">';
+                                        echo '<button class="btn btn-primary m-auto" id="alert"> Delete Item';
+                                                                         
+                                        echo '</button>';
                                         echo '</li>';
                                         
                                     }else{
                                         
+                                        echo '<div id="dom-target">';
+                                             
+                                                $output = $item->id; //Again, do some operation, get the output.
+                                                echo 'Item Id :'. htmlspecialchars($output); /* You have to escape because the result
+                                                                                   will not be valid HTML otherwise. */
+                                            
+                                        echo ' </div>';
+                                       
                                         echo '<li class="list-group-item">Item Lost At : ';
                                         echo $item->location;
                                         echo '</li>';
-                                        
                                         echo '<li class="list-group-item">';
-                                        echo anchor( site_url('examples/deleteItem/'.$item->id, NULL),
-                                        '<i class="btn btn-primary m-auto" '
-                                                . '>'
-                                                .'Delete Item'
-                                                . '</i>');
-                                       
+                                        echo '<button class="btn btn-primary m-auto" id="alert"> Delete Item';
+                                        echo '</button>';
+                                   
                                         echo '</li>';
    
                                     }
@@ -76,8 +99,11 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
+               
             </div>
         </div>
     </div>   
 </div>
+
 </div>
+

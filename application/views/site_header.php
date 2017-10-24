@@ -11,7 +11,7 @@
     <title>Lost-and-Found</title>
 
     <!-- Bootstrap core CSS -->
-    
+    <link href="<?=base_url()?>assets/css/alert-box.css" rel="stylesheet" type="text/css"/>
     <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/css/home-stylesheet.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/css/profile_upload.css" rel="stylesheet" type="text/css"/>
