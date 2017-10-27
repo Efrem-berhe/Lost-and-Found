@@ -48,8 +48,8 @@
                                 
                                 <ul class="list-group list-group-flush">
                                     
-                                        <li class="list-group-item">Item Name : ' <?php echo $item->item_name ?></li>                      
-                                        <li class="list-group-item">Item Found At : ' <?php echo $item->location ?></li> 
+                                        <li class="list-group-item">Item Name :  <?php echo $item->item_name ?></li>                      
+                                        <li class="list-group-item">Item Found At : <?php echo $item->location ?></li> 
                                         
                                         <li class="list-group-item m-auto">
                                             <button onclick="Item.itemid(<?php echo $item->id ;?>);" class="btn btn-primary m-auto" > Delete Item </button>

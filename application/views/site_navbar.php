@@ -41,18 +41,22 @@
                         <option value="Others">Others</option>
                     </select>
 
-                    <input type="text" class="form-control" placeholder="Search by location" name="Location">
+                    <input type="text" class="form-control" style="border-bottom: 0px;border-top: 0px;"placeholder="Search by location" name="Location">
+
                     <?php
-                    $data = array(
-                        'name' => 'button',
-                        'id' => 'button',
-                        'value' => 'true',
-                        'type' => 'submit',
-                        'content' => '<i class="fa fa-search" aria-hidden="true"></i>'
-                    );
+                    
+                        $data = array(
+                            'name' => 'button',
+                            'class'=>'searchbg',
+                            'id' => 'button',
+                            'value' => 'true',
+                            'type' => 'submit',
+                            'content' => '<i class="fa fa-search" aria-hidden="true"></i>'
+                        );
+                        
                     echo form_button($data);
                     ?>
-
+                     
                 </div>
                 </form>
 
@@ -198,8 +202,6 @@
             }
             ?>
                     </div>-->
-
-
         </div>
     </nav>
 

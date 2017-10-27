@@ -34,6 +34,11 @@
   
                                 <ul class="list-group list-group-flush">
                               
+                                   <li class="list-group-item">Location : <?php echo $item->location; ?></li>
+
+                                </ul>
+                                <ul class="list-group list-group-flush">
+                              
                                    <li class="list-group-item">Item Resolved At : <?php echo $item->date; ?></li>
 
                                 </ul>
