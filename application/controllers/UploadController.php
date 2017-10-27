@@ -167,9 +167,15 @@ class UploadController extends MY_Controller {
                     'img' => $file_data['file_name'],
                     'location'  => $this->input->post('location',true),
                     'item_name' => $this->input->post('item_name',true),
+                        
+                        'question1' => $this->input->post('1',true),
+                        'question2' => $this->input->post('2',true),
+                        'question3' => $this->input->post('3',true),
+                        
                     'userID'=>$this->auth_user_id,
   
                 );
+ 
                 $location= $this->input->post('location',true);                
                 $status = 'Found';
                 $category=$this->input->post('category', true);

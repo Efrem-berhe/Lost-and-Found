@@ -75,5 +75,12 @@ class item_model extends CI_Model {
                 $del = $this->db->delete('item');
                 return $del;
     }
+    
+    public function claimItem($item_id){
+        
+       $query = $this->db->get_where('item', array('id' => $item_id));       
+       return $query->result();
+       
+    }
 }
 

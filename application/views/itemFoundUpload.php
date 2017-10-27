@@ -50,6 +50,7 @@
                             <textarea class="form-control" id="itemname" rows="1" name="location" required></textarea>
                         </div>
                     </div>
+                    
                    <div class="form-group row">
                         <label for="itemname" class="col-sm-2 col-form-label">Item name</label>
                         <div class="col-sm-10">
@@ -71,32 +72,31 @@
                         </div>
                     </div>
 
-<!--                    <div class="form-group row">
-                        <label for="exampleTextarea" class="col-sm-2 col-form-label">Contact name</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="exampleTextarea" rows="1" name="contact_name" required></textarea>
-                        </div>
-                    </div>-->
-                    
-<!--                   <div class="form-group row">
-                        <label for="exampleTextarea" class="col-sm-2 col-form-label">Contact phone</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="exampleTextarea" rows="1" name="contact_phone" required></textarea>
-                        </div>
-                    </div>-->
-  
+                   
                     <div class="form-group row">
-                        <label for="exampleInputFile" class="col-sm-2 col-form-label" >Upload image</label>
+                        <label for="addbutton" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input type="file" class="form-control-file" name="img" id="exampleInputFile" aria-describedby="fileHelp">
+                            <button id="secretQuestion" type="button" class="form-control"><i class="fa fa-plus pr-2" aria-hidden="true"></i>Add secrete question</button>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        
-                        <label for="exampleInputFile" class="col-sm-2 col-form-label"></label>
+                        <label for="example" class="col-sm-2 col-form-label"></label>
+                        <div id="newInput" class="col-sm-10"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="InputFile" class="col-sm-2 col-form-label" >Upload image</label>
                         <div class="col-sm-10">
-                            <button type="submit" name="userSubmit" class=" form-control Orange-bg-color">Submit</button>
+                            <input type="file" class="form-control-file" name="img" id="InputFile" aria-describedby="fileHelp">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        
+                        <label for="exampleFile" class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                            <button type="submit" name="user12Submit" class=" form-control Orange-bg-color">Submit</button>
                         </div>
                     </div>
 

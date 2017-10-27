@@ -22,19 +22,22 @@
     <!--middle colomon-->
     <div class="col-sm-8 offset-1 mt-3">
         <div class="jumbotron"> 
-<!-- The Modal -->            
-<div class="modal fade" id="thankyouModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      </div>
-      <div class="modal-body">
-          <p>Your message has been sent.</p>                     
-      </div>    
-    </div>
-  </div>
-</div>            
+            
+<!-- alrert -->
+    <div id="dialogbox">
+         <div>
+             <div id="dialogboxhead"></div>
+             <div id="dialogboxbody" style=" background: #333; padding: 20px; color: #fff"></div>
+             <div id="dialogboxfoot" style="background: #666; padding: 10px; text-align: right">
+                
+                 <button onclick="Alert.ok()" class="ml-1 btn btn-primary Orange-bg-color "> OK </button>
+                    
+             </div>
+
+         </div>
+     </div>
+
+<!--<button id="efrem">hello world</button>-->
             <?php echo form_open_multipart();?>
                 <fieldset>
                     <legend class="text-center">Return Found Item</legend>
@@ -56,7 +59,10 @@
                         
                         <label for="exampleInputFile" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <button type="submit" name="Submitemail" class=" form-control Orange-bg-color">Send</button>
+                            <?php
+                            echo '<button id="efrem" type="submit" name="Submitemail" class=" form-control Orange-bg-color">';
+                            echo 'Send Message</button>';
+                             ?>
                         </div>
                     </div>
                 </fieldset>
@@ -75,7 +81,7 @@
 
             $this->load->library('email',$config);
             $this->email->set_newline("\r\n");
-            
+           
             $textmessage = $this->input->post('textmessage', true);
             
             $this->email->from('effer.vision@gmail.com','Efrem Gebremedhin');
@@ -112,7 +118,7 @@
             $modal = "<script>
 
                         $(window).load(function(){
-                            jQuery('#thankyouModal').modal('show');
+                Alert.render('Your message has been successfuly sent');
                         });
                        </script>";
        echo $modal;
@@ -123,6 +129,5 @@
         </div>
     </div>
 </div>
-
 
 

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -22,5 +23,6 @@
     <link href="<?=base_url()?>assets/css/jumbotron.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    
 
 </head>

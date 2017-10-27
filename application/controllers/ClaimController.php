@@ -48,15 +48,16 @@ class ClaimController extends MY_Controller {
 	
         }
         
-        public function claimItem(){
+        public function claimItem($itemid){
             
             if($this->require_role('admin') ){
                 
             $this->is_logged_in();
-
+            $Data = $this->item_model->claimItem($itemid);
+            
             echo $this->load->view('site_header', '', TRUE);
             echo $this->load->view('site_navbar', '', TRUE);
-            echo $this->load->view('claimItem' ,'', TRUE); 
+            echo $this->load->view('claimItem' ,['items'=>$Data], TRUE); 
             echo $this->load->view('site_footer', '', TRUE);
             }
         }

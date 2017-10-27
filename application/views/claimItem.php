@@ -24,29 +24,61 @@
         <div class="jumbotron">
 
             <!-- The Modal -->            
-            <div class="modal fade" id="thankyouModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Your message has been sent.</p>                     
-                        </div>    
-                    </div>
-                </div>
-            </div>   
+            <div id="dialogbox">
+         <div>
+             <div id="dialogboxhead"></div>
+             <div id="dialogboxbody" style=" background: #333; padding: 20px; color: #fff"></div>
+             <div id="dialogboxfoot" style="background: #666; padding: 10px; text-align: right">
+                
+                 <button onclick="Alert.ok()" class="ml-1 btn btn-primary Orange-bg-color "> OK </button>
+                    
+             </div>
+
+         </div>
+     </div>  
+            <?php foreach ($items as $item): ?> 
             
             <?php echo form_open_multipart(); ?>
+           
             <fieldset>
                 <legend class="text-center">Claim Item</legend>
+            
+                    <?php if(!empty($item->question1)){
+                        echo '<h4 class="mb-2">Please answer the following secrete questions</h4>';
+                        echo '<blockquote class="card">';
+                          echo' <p class="mb-0 text-center ">';
+                          echo '1.  ' . $item->question1;
+                          echo '</p>';
+                          echo '</blockquote>';
+                        
+                    }
+                    ?>
+                
+                 <?php if(!empty($item->question2)){
+                         echo '<blockquote class="card">';
+                          echo' <p class="mb-0 text-center ">';
+                          echo '2.  ' . $item->question2;
+                          echo '</p>';
+                          echo '</blockquote>';
+                        
+                    }
+                    ?>
+              
+                 <?php if(!empty($item->question3)){
+                        echo 'Please answer the secrete questions';
+                        echo $item->question3;
+                    }
+                    ?>
+                
                 <div class="form-group row">
                     <label for="textmessage" class="col-sm-2 col-form-label" >Message</label>
                     <div class="col-sm-10"> 
                         <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="send a message to the person who found the item"name="textmessage" required></textarea>
                     </div>
-                </div>
-
+                </div>                
+                 
+              
+         
                 <div class="form-group row">
                     <label for="exampleInputFile" class="col-sm-2 col-form-label" >Attach File</label>
                     <div class="col-sm-10">
@@ -62,6 +94,7 @@
                     </div>
                 </div>
             </fieldset>
+            <?php endforeach; ?>
             </form>
             <?php
             if (isset($_POST["Submitemail"])) {
@@ -112,10 +145,10 @@
                     $modal = "<script>
 
                         $(window).load(function(){
-                            jQuery('#thankyouModal').modal('show');
+                            Alert.render('Your message has been sent successfuly ');
                         });
                        </script>";
-                    echo $modal;
+       echo $modal;
                 }
             }
             ?> 

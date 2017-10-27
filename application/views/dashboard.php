@@ -46,9 +46,12 @@
                                         echo '</li>';
 
                                         echo '<a class="btn btn-primary" href="';
-                                        echo site_url();
-                                        echo '/ClaimController/claimItem">';
-                                        echo '<li class="" >Claim</li>';
+                                        echo site_url('ClaimController/claimItem/'.$item->id);
+                                        //echo '/ClaimController/claimItem/"';
+                                        //echo $item->id; 
+                                        echo '">';
+                                        echo '<li class="" >';
+                                        echo 'Claim</li>';
                                         echo '</a>';
                                     } else {
 
