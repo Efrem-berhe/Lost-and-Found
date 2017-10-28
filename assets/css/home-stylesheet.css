@@ -43,13 +43,13 @@ select{
     border-top: 0px;
     border-bottom: 0px;
 }
-aside{
+/*aside{
     background: #BBDEFB;
     position: fixed;
     height: 100%;
     width: 220px;
     z-index: 999;
-}
+}*/
 .red-color{
     color: #e74c3c;
 }
@@ -80,4 +80,52 @@ argin: 0 auto;
     border: 0px;
    padding-bottom: 0px;
    padding-top: 0px;
+}
+.primary-color{
+    background-color: #1976D2;
+}
+
+.secondary-color{
+    background-color: #BBDEFB;
+}
+#content{
+    
+}
+#aside{
+    width: 17%;
+    float: left;
+    background: #BBDEFB;
+    height: 100%;
+    position: absolute;
+}
+
+@media (min-width: 576px) {
+    
+    #main{
+    width: 100%;
+    float: right;
+}
+}
+
+@media (min-width: 768px) { 
+#main{
+    width: 100%;
+    float: right;
+}
+}
+
+
+@media (min-width: 992px) { 
+
+    #main{
+    width: 83%;
+    float: right;
+}
+}
+
+@media (min-width: 1200px) {
+#main{
+    width: 83%;
+    float: right;
+}
 }

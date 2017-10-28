@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link        http://community-auth.com
  */
 ?>
-
+<div id="main" class="jumbotron Padding-Top"
 <h1 class="ml-3">Account Recovery - Stage 2</h1>
 
 <?php
@@ -154,5 +154,7 @@ if ($showform == 1) {
                     <?php
                 }
             }
-/* End of file choose_password_form.php */
-/* Location: /community_auth/views/examples/choose_password_form.php */
+?>
+
+</div>
+</div>

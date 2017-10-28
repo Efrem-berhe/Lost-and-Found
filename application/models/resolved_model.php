@@ -18,6 +18,7 @@ class resolved_model extends CI_Model {
     public function get(){
         $this->db->select('*');
         $this->db->from('customer_profiles');
+        $this->db->where('user_id',$this->auth_user_id);        
         $q = $this->db->get();
         return $q->result();
     }

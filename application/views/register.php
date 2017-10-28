@@ -1,10 +1,10 @@
- <div class="jumbotron">
-<div class="row">
+<div id="main" class="jumbotron Padding-Top">
+
     <!--left colomon-->
     <div class="col-sm-3">
     </div>
     <!--middle colomon-->
-    <div class="col-sm-6">
+    <div class="col-sm-6 m-auto">
 
             <form class="form-horizontal" method="POST" action="<?= site_url('examples/create_user') ?>">
                 <fieldset>

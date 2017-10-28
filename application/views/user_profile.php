@@ -1,32 +1,14 @@
-<div class="row">
-    <div class="col-sm-2 Asside-settings">
 
-        <aside>
-            <h5 class="mt-5 text-center red-color">Report A Lost Item</h5>
-            <div class="row m-auto">
-                <a href="<?= site_url() ?>/UploadController/itemlost" class="m-auto">
-                    <img src="<?= base_url() ?>assets/uploads/crop" width="105" height="105"> 
-                </a>
-            </div>
-            <h5 class="mt-5 text-center green-color">Report A Found Item</h5> 
-            <div class="row">
-                <a href="<?= site_url() ?>/UploadController/itemfound" class="m-auto">
-                    <img src="<?= base_url() ?>assets/uploads/Found_Item_2.png"  width="120" height="120">
-                </a>
-            </div>
-        </aside>
-
-    </div>
-
-    <div class="col-sm-10">
-        <div class="jumbotron Padding-Top">
+   
+<div id="main" class="jumbotron Padding-Top">
+       
                 <div class="pb-3 ">
                                 <h1>Profile settings</h1>
                             </div>
             <div class="row">
                     
                 <div class="card  m-2  bg-light" style="width: 20rem;">
-                    <div class="card-header m-0"><h4><i class="fa fa-user mr-2" aria-hidden="true"></i>Edit User Name</h4></div>
+                    <div class="card-header m-0 primary-color" style="color: white"><h4><i class="fa fa-user mr-2" aria-hidden="true"></i>Edit User Name</h4></div>
                     <div class="card-body m-2">
                         <form class="form-horizontal m-auto" method="POST" action="<?= site_url('examples/update_username') ?>">
                             <p>Your current user name is : <?php echo $this->auth_username ?> </p>
@@ -55,10 +37,10 @@
                 </div>
                 
                 <div class="card  m-2  bg-light" style="width: 20rem;">
-                    <div class="card-header"><h4><i class="fa fa-envelope mr-2" aria-hidden="true"></i> Edit Emil Address</h4></div>
+                    <div class="card-header primary-color" style="color: white"><h4><i class="fa fa-envelope mr-2 primary-color" aria-hidden="true"></i> Edit Emil Address</h4></div>
                     <div class="card-body m-2">
                         <form class="form-horizontal m-auto" method="POST" action="<?= site_url('examples/update_email') ?>">
-                            <p>Your current email is : <?php echo $this->auth_email ?> </p>
+                            <p>Your email is : <?php echo $this->auth_email ?> </p>
                             <div class="form-group row">
                                 
                                 <div class="col-sm-12">
@@ -84,7 +66,7 @@
                 </div>
                 
                 <div class="card m-2 bg-light" style="width: 20rem;">
-                    <div class="card-header"><h4><i class="fa fa-unlock-alt mr-2" aria-hidden="true"></i> Edit Password</h4></div>
+                    <div class="card-header primary-color" style="color: white"><h4><i class="fa fa-unlock-alt mr-2 primary-color" aria-hidden="true"></i> Edit Password</h4></div>
                     <div class="card-body m-2">
                         <form class="form-horizontal m-auto" method="POST" action="<?= site_url('examples/update_password') ?>">
                             <p>Your current user id is : <?php echo $this->auth_user_id ?> </p>

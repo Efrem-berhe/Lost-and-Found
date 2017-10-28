@@ -1,24 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-/**
- * Community Auth - Recover Form View
- *
- * Community Auth is an open source authentication application for CodeIgniter 3
- *
- * @package     Community Auth
- * @author      Robert B Gottier
- * @copyright   Copyright (c) 2011 - 2017, Robert B Gottier. (http://brianswebdesign.com/)
- * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
- * @link        http://community-auth.com
- */
 ?>
+<div id="main" class="jumbotron Padding-Top">
+    <h1 class="ml-3">Account Recovery</h1>
 
-<h1 class="ml-3">Account Recovery</h1>
-
-<?php
-if (isset($disabled)) {
-    echo '
+    <?php
+    if (isset($disabled)) {
+        echo '
 		<div style="border:1px solid red;">
 			<p>
 				Account Recovery is Disabled.
@@ -32,8 +20,8 @@ if (isset($disabled)) {
 			</p>
 		</div>
 	';
-} else if (isset($banned)) {
-    echo '
+    } else if (isset($banned)) {
+        echo '
 		<div style="border:1px solid red;">
 			<p>
 				Account Locked.
@@ -47,38 +35,38 @@ if (isset($disabled)) {
 			</p>
 		</div>
 	';
-}
-if (isset($confirmation)) {
-    $config = Array(
-        'protocol' => 'smtp',
-        'smtp_host' => 'smtp.gmail.com',
-        'smtp_port' => 587,
-        'smtp_user' => 'effer.vision@gmail.com',
-        'smtp_pass' => 'IhaveVision'
-    );
+    }
+    if (isset($confirmation)) {
+        $config = Array(
+            'protocol' => 'smtp',
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_port' => 587,
+            'smtp_user' => 'effer.vision@gmail.com',
+            'smtp_pass' => 'IhaveVision'
+        );
 
 
-    $this->load->library('email', $config);
-    $this->email->set_newline("\r\n");
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
 
-    $this->email->from('effer.vision@gmail.com', 'Efrem Gebremedhin');
-    $this->email->to('effer.vision@gmail.com');
-    $this->email->subject('Confirmation of changing your password');
+        $this->email->from('effer.vision@gmail.com', 'Efrem Gebremedhin');
+        $this->email->to('effer.vision@gmail.com');
+        $this->email->subject('Confirmation of changing your password');
 
-    $textmessage = '
+        $textmessage = '
 				Complete your recovery.
 			'
-            . '
+                . '
 				This is the account recovery link:
 			'
-            . $special_link;
+                . $special_link;
 
-    $this->email->message($textmessage);
-    $this->email->send();
-    echo '<h5 class="ml-3">Congratulations, you have created an account recovery link</h5>';
-    echo '<p class="ml-3">Please check your email to complete your account recovery.</p>';
-} else if (isset($no_match)) {
-    echo '
+        $this->email->message($textmessage);
+        $this->email->send();
+        echo '<h5 class="ml-3">Congratulations, you have created an account recovery link</h5>';
+        echo '<p class="ml-3">Please check your email to complete your account recovery.</p>';
+    } else if (isset($no_match)) {
+        echo '
 		<div  style="border:1px solid red;">
 			<p class="feedback_header">
 				Supplied email did not match any record.
@@ -86,9 +74,9 @@ if (isset($confirmation)) {
 		</div>
 	';
 
-    $show_form = 1;
-} else {
-    echo '
+        $show_form = 1;
+    } else {
+        echo '
 		<p class="ml-3">
 			If you\'ve forgotten your password and/or username, 
 			enter the email address used for your account, 
@@ -97,41 +85,42 @@ if (isset($confirmation)) {
 		</p>
 	';
 
-    $show_form = 1;
-}
-if (isset($show_form)) {
-    ?>
+        $show_form = 1;
+    }
+    if (isset($show_form)) {
+        ?>
 
-    <?php echo form_open(); ?>
-    <div class="ml-3">
+        <?php echo form_open(); ?>
+        <div class="ml-3">
 
-        <legend>Enter your account's email address:</legend>
+            <legend>Enter your account's email address:</legend>
 
-        <div class="form-horizontal">
-            <fieldset>
+            <div class="form-horizontal">
+                <fieldset>
 
-                <div class="form-group row">
-                    <label for="login_string" class="form_label col-sm-1 col-form-label">Email</label>
-                    <div class="col-sm-3">
-                        <input class="form-control password"  type="text" name="email" id="email" autocomplete="off" maxlength="255">                   
+                    <div class="form-group row">
+                        <label for="login_string" class="form_label col-sm-1 col-form-label">Email</label>
+                        <div class="col-sm-3">
+                            <input class="form-control password"  type="text" name="email" id="email" autocomplete="off" maxlength="255">                   
+                        </div>
                     </div>
-                </div>
-                
-                <div class="form-group row">
-                        
+
+                    <div class="form-group row">
+
                         <label for="submitemail" class="col-sm-1 col-form-label"></label>
                         <div class="col-sm-3">
                             <button type="submit" value="Send Email" name="submit" id="submit_button" class=" form-control Orange-bg-color">Send Email</button>
                         </div>
-                </div>
-                
-            </fieldset>
+                    </div>
+
+                </fieldset>
+            </div>
+
         </div>
- 
-    </div>
     </form>
 
-                <?php
-            }
-/* End of file recover_form.php */
-/* Location: /community_auth/views/examples/recover_form.php */
+    <?php
+}
+?>
+</div>
+</div>

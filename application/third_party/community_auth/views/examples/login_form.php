@@ -1,12 +1,12 @@
- <div class="jumbotron">
-<div class="row">
+<div id="main" class="jumbotron">
+
    
     <!--left colomon-->
     <div class="col-sm-3">
     </div>
    
         <!--middle colomon-->
-    <div class="col-sm-6">
+    <div class="col-sm-6 m-auto">
         
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -144,7 +144,7 @@ if( ! isset( $on_hold_message ) )
 	}
         ?>
     </div>
-    </div>
+   
    <!--right colomon-->
     <div class="col-sm-3">
     </div>

@@ -22,7 +22,7 @@ and open the template in the editor.
 #dialogbox{
     display: none;
     position: fixed;
-    background: #000;
+    background: #1976D2;
     border-radius: 7px;
     width: 550px;
     z-index: 10;

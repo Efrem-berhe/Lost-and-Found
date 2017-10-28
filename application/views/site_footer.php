@@ -1,13 +1,7 @@
 
-<div>
-<!-- Example row of columns -->
-    
-
-    <footer>
-        <hr>
-        <p>&copy; Efrem-Berhe 2017</p>
-    </footer>
-</div> <!-- /container -->
+<div id="footer">
+      <p>&copy; Efrem-Berhe 2017 Web-apps</p>     
+</div> 
 
 
 <!-- Bootstrap core JavaScript
