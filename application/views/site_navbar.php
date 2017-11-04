@@ -7,7 +7,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <a class="navbar-brand m-auto" href="<?php base_url() ?>index">Lost-and-Found</a>
+            <a class="navbar-brand m-auto" href="<?php base_url() ?>index"><img class="mr-2"src="<?= base_url() ?>assets/uploads/lost-and-found.png" width="40" height="40">Lost&Found</a>
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <div class="nav navbar-nav hidden-md-up mt-3 primary-color p-2">
@@ -163,10 +163,10 @@
 
                     echo anchor(site_url('examples/register', NULL), '<i class="fa fa-user-plus" aria-hidden="true" style="padding-right:4px;"></i> Sign Up');
                     echo '<div class="dropdown-divider"></div>';
-                    echo anchor(site_url('UploadController/itemlost', NULL), '<i class="fa fa-user-plus" aria-hidden="true" style="padding-right:4px;"></i> Report Lost An Item');
+                    echo anchor(site_url('UploadController/itemlost', NULL), '<i class="fa fa-minus-circle" aria-hidden="true" style="padding-right:4px;"></i> Report A Lost Item');
 
                     echo '<div class="dropdown-divider"></div>';
-                    echo anchor(site_url('/UploadController/itemfound', NULL), '<i class="fa fa-user-plus" aria-hidden="true" style="padding-right:4px;"></i> Report Found An Item');
+                    echo anchor(site_url('/UploadController/itemfound', NULL), '<i class="fa fa-plus-circle" aria-hidden="true" style="padding-right:4px;"></i> Report A Found Item');
    
                 }
                 ?>
@@ -315,8 +315,8 @@
                     echo' </ul> ';
                     echo'</li>';
                 } else {
-                    echo'<div class="hidden-md-down"';
-                    echo'  <div class="mt-2">';
+                    echo'<div class="hidden-md-down mt-1"';
+                    echo'<div class="">';
                     echo anchor(site_url(LOGIN_PAGE . '?' . AUTH_REDIRECT_PARAM . '=examples', NULL), '<i class="fa fa-sign-in" aria-hidden="true" style="padding-right: 4px;"></i> Sing In', 'id="login-link"');
                     echo anchor(site_url('examples/register', NULL), '<i class="fa fa-user-plus" aria-hidden="true" style="padding-left: 16px;padding-right:4px;"></i> Sign Up');
                     echo'</div>';

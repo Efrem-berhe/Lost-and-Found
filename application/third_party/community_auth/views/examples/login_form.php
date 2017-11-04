@@ -61,25 +61,20 @@ if( ! isset( $on_hold_message ) )
 	echo form_open( $login_url, ['class' => 'std-form'] ); 
 ?>
         <div class="form-horizontal">
-           <fieldset>
-               
-            <div class="form-group row">
-                            <label for="login_string" class="form_label col-sm-2 col-form-label">Username or Email</label>
-                            <div class="col-sm-10">
-                                <input class="form-control"  type="text" name="login_string" id="login_string" autocomplete="off" maxlength="255">                   
-                            </div>
-            </div>
             
-            <div class="form-group row">
-                
-                <label for="login_pass" class="form_label col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
+           <fieldset>
+               <div class="input-group mb-2">
+                    <span class="input-group-addon secondary-color" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" placeholder="Username or email" name="login_string" id="login_string" autocomplete="on" maxlength="255" aria-describedby="basic-addon1">
+               </div>
+                            
+                <div class="input-group mb-1">
+                    <span class="input-group-addon secondary-color" id="basic-addon1"><i class="fa fa-unlock" aria-hidden="true"></i></span>
                     <input class="form-control form_control" type="password" name="login_pass" id="login_pass" class="form_control password" <?php
                 if (config_item('max_chars_for_password') > 0)
                     echo 'maxlength="' . config_item('max_chars_for_password') . '"';
                 ?> autocomplete="off">
-                </div>
-            </div>
+                 </div>
            </fieldset>
             
         </div>
@@ -109,8 +104,7 @@ if( ! isset( $on_hold_message ) )
                             </p>
 
                     <div class="form-group row">
-                        <label for="login_pass" class="form_label col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-12">
                             <input type="submit" name="submit" class="form-control Orange-bg-color" value="Login" id="submit_button"  />
                         </div>
                     </div>

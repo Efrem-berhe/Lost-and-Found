@@ -96,7 +96,7 @@ argin: 0 auto;
     float: left;
     background: #BBDEFB;
     height: 100%;
-    position: absolute;
+    position: fixed;
 }
 
 @media (min-width: 576px) {

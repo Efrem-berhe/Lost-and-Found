@@ -1,27 +1,8 @@
 
-<div class="row">
-    <!--left colomon-->
-    <div class="col-sm-2 Asside-settings">
-        <aside>
-            <h5 class="mt-5 text-center red-color">Report A Lost Item</h5>
-            <div class="row m-auto">
-                <a href="<?= site_url() ?>/UploadController/itemlost" class="m-auto">
-                    <img src="<?= base_url() ?>assets/uploads/crop" width="105" height="105"> 
-                </a>
-            </div>
-            <h5 class="mt-5 text-center green-color">Report A Found Item</h5>
-            <div class="row">
-                <a href="<?= site_url() ?>/UploadController/itemfound" class="m-auto">
-                    <img src="<?= base_url() ?>assets/uploads/Found_Item_2.png"  width="120" height="120">
-                </a>
-
-            </div>
-        </aside>
-
-    </div>
+  <div id="main" class="jumbotron Padding-Top"> 
     <!--middle colomon-->
     <div class="col-sm-8 offset-1 mt-3">
-        <div class="jumbotron">
+        
 
             <!-- The Modal -->            
             <div id="dialogbox">
@@ -155,6 +136,6 @@
 
         </div>     
     </div>  
-</div>
 
+  </div>
 
