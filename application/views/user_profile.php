@@ -1,4 +1,3 @@
-
    
 <div id="main" class="jumbotron Padding-Top">
        
@@ -66,7 +65,7 @@
                 </div>
                 
                 <div class="card m-2 bg-light" style="width: 20rem;">
-                    <div class="card-header primary-color" style="color: white"><h4><i class="fa fa-unlock-alt mr-2 primary-color" aria-hidden="true"></i> Edit Password</h4></div>
+                    <div class="card-header primary-color" style="color: white"><h4><i class="fa fa-unlock" aria-hidden="true"></i> Edit Password</h4></div>
                     <div class="card-body m-2">
                         <form class="form-horizontal m-auto" method="POST" action="<?= site_url('examples/update_password') ?>">
                             <p>Your current user id is : <?php echo $this->auth_user_id ?> </p>

@@ -317,7 +317,7 @@
                 } else {
                     echo'<div class="hidden-md-down mt-1"';
                     echo'<div class="">';
-                    echo anchor(site_url(LOGIN_PAGE . '?' . AUTH_REDIRECT_PARAM . '=examples', NULL), '<i class="fa fa-sign-in" aria-hidden="true" style="padding-right: 4px;"></i> Sing In', 'id="login-link"');
+                    echo anchor(site_url(LOGIN_PAGE . '?' . AUTH_REDIRECT_PARAM . '=examples', NULL), '<i class="fa fa-sign-in" aria-hidden="true" style="padding-right: 4px;"></i> Sign In', 'id="login-link"');
                     echo anchor(site_url('examples/register', NULL), '<i class="fa fa-user-plus" aria-hidden="true" style="padding-left: 16px;padding-right:4px;"></i> Sign Up');
                     echo'</div>';
                     echo'</div>';

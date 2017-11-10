@@ -9,7 +9,7 @@
         <form class="form-horizontal" method="POST" action="<?= site_url('examples/create_user') ?>">
             <fieldset>
                 <div class="pb-3">
-                    <h1>Register</h1>
+                    <h1>Sign Up</h1>
                 </div>
 
                 <div class="input-group mb-2">
@@ -25,18 +25,18 @@
 
                 <div class="input-group mb-2">
                     <span class="input-group-addon secondary-color" id="basic-addon1"><i class="fa fa-unlock" aria-hidden="true"></i></span>
-                    <input  type="password" name="password" id="password" class="form-control" placeholder="Password" >
+                    <input  type="password" name="password" id="passwordreg" class="form-control" placeholder="Password" >
                 </div>
 
                 <div class="input-group mb-2">
                     <span class="input-group-addon secondary-color" id="basic-addon1"><i class="fa fa-unlock" aria-hidden="true"></i></span>
-                    <input  type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm password" >
+                    <input  type="password" name="confirm_password" id="confirmpasswrodreg" class="form-control" placeholder="Confirm password" >
                 </div>
 
             </fieldset>
             <div class="form-group row">
                 <div class="col-sm-12">
-                    <input type="submit" name="submit" class="form-control Orange-bg-color" value="Register" id="submit_button"  />
+                    <input type="submit" name="submit" class="form-control Orange-bg-color" value="Sign Up" id="submit_button"  />
                 </div>
             </div>
 

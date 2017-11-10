@@ -18,7 +18,14 @@
     <div class="col-sm-12 p-0">
         <div class="jumbotron Padding-Top">
             <div class="row">
+                <?php if(empty($items)){
+                     echo'<img class="card-img-top m-auto" src="';
+                     echo base_url();
+                     echo 'assets/uploads/myItem.png">';
+                }  
+                ?>
                 <?php foreach ($items as $item): ?> 
+                
                     <div class="col-sm-4 my-flex-card">
                         <div class="card  mb-3">
                             <img class="card-img-top" src="<?= base_url() ?>assets/uploads/<?php echo $item->img; ?>" height="236" alt="Card image cap">

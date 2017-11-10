@@ -372,7 +372,10 @@ class Examples extends MY_Controller {
         } else {
             echo $this->load->view('site_header', '', TRUE);
             echo $this->load->view('site_navbar', '', TRUE);
-            echo '<h1>User Creation Error(s)</h1>' . validation_errors();
+            echo '<h1 class="text-center">User Creation Error(s)</h1>';
+            echo '<div class="text-center">';       
+                echo validation_errors();
+            echo '</div>';
             echo $this->load->view('site_footer', '', TRUE);
         }
     }

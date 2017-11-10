@@ -51,3 +51,17 @@ function validateEmail(){
 
 email.onchange = validateEmail;
 confirm_email.onkeyup = validateEmail;
+
+var registerpassword = document.getElementById("passwordreg")
+  , confirm_registerpassword = document.getElementById("confirmpasswrodreg");
+
+function validateRegister(){
+  if(registerpassword.value != confirm_registerpassword.value) {
+    confirm_registerpassword.setCustomValidity("Password Don't Match");
+  } else {
+    confirm_registerpassword.setCustomValidity('');
+  }
+}
+
+registerpassword.onchange = validateRegister;
+confirm_registerpassword.onkeyup = validateRegister;
