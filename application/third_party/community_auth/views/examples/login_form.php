@@ -101,6 +101,13 @@
                 </div>
             </div>
 
+            <p class="text-center">
+           
+                <a href="<?php echo site_url('examples/register'); ?>" class="red-color">
+                    New user ? Sign Up
+                </a>
+            </p>
+            
             </form>
 
     <?php

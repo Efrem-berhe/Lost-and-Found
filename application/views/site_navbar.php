@@ -280,6 +280,21 @@
                     echo' </div>';
                     echo' </li>';
 
+                     echo '<div class="dropdown-divider"></div>';
+                    echo' <li>';
+                    echo' <div class="navbar-login navbar-login-session">';
+                    echo'   <div class="row">';
+                    echo'   <div class="col-lg-12">';
+
+                    echo '<a class="dropdown-item" href = "';
+                    echo site_url('EmailController/email');
+                    echo '">Email</a>';
+
+                    echo' </div>';
+                    echo' </div>';
+                    echo' </div>';
+                    echo' </li>';
+                    
                     echo '<div class="dropdown-divider"></div>';
                     echo' <li>';
                     echo' <div class="navbar-login navbar-login-session">';

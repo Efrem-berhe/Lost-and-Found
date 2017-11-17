@@ -11,8 +11,8 @@
         var winH = window.innerHeight;
         var dialogoverlay = document.getElementById('dialogoverlay');
         var dialogbox = document.getElementById('dialogbox');
-       // dialogoverlay.style.display = "block";
-       // dialogoverlay.style.height = winH+"px";
+        dialogoverlay.style.display = "block";
+        dialogoverlay.style.height = winH+"px";
         
         dialogbox.style.left = (winW/2) - (550*.5) + "px";
         dialogbox.style.top = "100px";

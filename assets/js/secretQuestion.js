@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 var counter = 1;
 var limit = 4;
 var secretQuestion = document.getElementById("secretQuestion");
@@ -14,7 +15,8 @@ function createnewbutton(){
 var element = document.createElement("textarea");
 
 if(counter == limit){
-    alert("you have reached the limit of adding  " + counter + "  inputs");
+    //alert("you have reached the limit of adding  " + counter + "  inputs");
+    Alert.render("you have reached the limit of adding  " + counter + "  inputs");
 }else{
     element.setAttribute("name", counter);
     element.setAttribute("rows",1);

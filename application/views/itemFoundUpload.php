@@ -1,7 +1,20 @@
 
 <div id="main" class="jumbotron Padding-Top">
+    
+    <div id="dialogoverlay"></div>
+     <div id="dialogbox">
+        <div>
+            <div id="dialogboxhead"></div>
+            <div id="dialogboxbody" style=" background: #333; padding: 20px; color: #fff"></div>
+            <div id="dialogboxfoot" style="background: #666; padding: 10px; text-align: right">
 
+                <button onclick="Alert.ok()" class="ml-1 btn btn-primary Orange-bg-color "> OK </button>
 
+            </div>
+
+        </div>
+    </div>
+    
         <?php echo form_open_multipart(site_url("UploadController/foundItem_upload")); ?>
         <fieldset>
             <legend class="text-center">Report A Found Item</legend>

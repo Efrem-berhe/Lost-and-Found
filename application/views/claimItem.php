@@ -3,51 +3,55 @@
     <!--middle colomon-->
     <div class="col-sm-8 offset-1 mt-3">
         
-
-            <!-- The Modal -->            
+                <!-- alrert -->
+            <div id="dialogoverlay"></div>
             <div id="dialogbox">
-         <div>
-             <div id="dialogboxhead"></div>
-             <div id="dialogboxbody" style=" background: #333; padding: 20px; color: #fff"></div>
-             <div id="dialogboxfoot" style="background: #666; padding: 10px; text-align: right">
-                
-                 <button onclick="Alert.ok()" class="ml-1 btn btn-primary Orange-bg-color "> OK </button>
-                    
-             </div>
+                <div>
+                    <div id="dialogboxhead"></div>
+                    <div id="dialogboxbody" style=" background: #333; padding: 20px; color: #fff"></div>
+                    <div id="dialogboxfoot" style="background: #666; padding: 10px; text-align: right">
 
-         </div>
-     </div>  
+                        <button onclick="Alert.ok()" class="ml-1 btn btn-primary Orange-bg-color "> OK </button>
+
+                    </div>
+
+                </div>
+            </div>
+    
             <?php foreach ($items as $item): ?> 
             
-            <?php echo form_open_multipart(); ?>
+            <?php echo form_open_multipart(site_url("EmailController/newEmail/" . $item->id)); ?>
            
             <fieldset>
                 <legend class="text-center">Claim Item</legend>
             
                     <?php if(!empty($item->question1)){
                         echo '<h4 class="mb-2">Please answer the following secrete questions</h4>';
-                        echo '<blockquote class="card">';
-                          echo' <p class="mb-0 text-center ">';
+                          echo '<blockquote class="card">';
+                          echo' <li class="mb-0 text-center ">';
                           echo '1.  ' . $item->question1;
-                          echo '</p>';
+                          echo '</li>';
                           echo '</blockquote>';
                         
                     }
                     ?>
                 
                  <?php if(!empty($item->question2)){
-                         echo '<blockquote class="card">';
-                          echo' <p class="mb-0 text-center ">';
+                          echo '<blockquote class="card">';
+                          echo' <li class="mb-0 text-center ">';
                           echo '2.  ' . $item->question2;
-                          echo '</p>';
+                          echo '</li>';
                           echo '</blockquote>';
                         
                     }
                     ?>
               
                  <?php if(!empty($item->question3)){
-                        echo 'Please answer the secrete questions';
-                        echo $item->question3;
+                        echo '<blockquote class="card">';
+                          echo' <p class="mb-0 text-center ">';
+                          echo '2.  ' . $item->question3;
+                          echo '</p>';
+                          echo '</blockquote>';
                     }
                     ?>
                 
@@ -124,7 +128,6 @@
                     $this->email->send();
 
                     $modal = "<script>
-
                         $(window).load(function(){
                             Alert.render('Your message has been sent successfuly ');
                         });

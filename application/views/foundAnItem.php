@@ -2,6 +2,7 @@
 <div id="main" class="jumbotron Padding-Top">
 
     <!-- alrert -->
+    <div id="dialogoverlay"></div>
     <div id="dialogbox">
         <div>
             <div id="dialogboxhead"></div>
@@ -91,7 +92,6 @@ if (isset($_POST["Submitemail"])) {
         $this->email->send();
 
         $modal = "<script>
-
                         $(window).load(function(){
                 Alert.render('Your message has been successfuly sent');
                         });
